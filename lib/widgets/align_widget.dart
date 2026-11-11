@@ -21,108 +21,400 @@ class AlignWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '1. Align.topLeft',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: Colors.grey.shade200,
-                  child: const Align(
-                    alignment: Alignment.topLeft,
-                    child: Text('Kiri Atas'),
-                  ), // Align
-                ), // Container
-                const SizedBox(height: 20),
-
-                const Text(
-                  '2. Align.center',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: Colors.grey.shade200,
-                  child: const Align(
-                    alignment: Alignment.center,
-                    child: Text('Tengah'),
-                  ), // Align
-                ), // Container
-                const SizedBox(height: 20),
-
-                const Text(
-                  '3. Align.bottomRight',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: Colors.grey.shade200,
-                  child: const Align(
-                    alignment: Alignment.bottomRight,
-                    child: Text('Kanan Bawah'),
-                  ), // Align
-                ), // Container
-                const SizedBox(height: 20),
-
-                const Text(
-                  '4. Align Dengan Alignment Custom (x, y)',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: Colors.grey.shade200,
-                  child: const Align(
-                    alignment: Alignment(0.5, -0.5),
-                    child: Text('Alignment(0.5, -0.5)'),
-                  ), // Align
-                ), // Container
-                const SizedBox(height: 20),
-
-                const Text(
-                  '5. Align Untuk Icon Favorite',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: Colors.grey.shade200,
-                  child: const Align(
-                    alignment: Alignment.centerRight,
-                    child: Icon(Icons.favorite, color: Colors.red, size: 32),
-                  ), // Align
-                ), // Container
-                const SizedBox(height: 20),
-
-                const Text(
-                  '6. Align Dengan FractionalOffset (widthFactor)',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Container(
-                  color: Colors.grey.shade200,
-                  child: Align(
-                    alignment: Alignment.center,
-                    widthFactor: 2,
-                    heightFactor: 2,
-                    child: Container(
-                      color: Colors.purpleAccent,
-                      padding: const EdgeInsets.all(10),
-                      child: const Text(
-                        'Kotak Kecil',
-                        style: TextStyle(color: Colors.white),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.purple, // Mengubah warna Purple
+                      child: Text('1', style: TextStyle(color: Colors.yellow)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Text(
+                      'Align Top Left',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Top Left',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.yellow, // Mengubah warna Purple
+                      child: Text('2', style: TextStyle(color: Colors.purple)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Align Top Center',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
                       ), // Text
-                    ), // Container
-                  ), // Align
-                ), // Container
-                const SizedBox(height: 20),
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Top Center',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.purple, // Mengubah Purple
+                      child: Text('3', style: TextStyle(color: Colors.yellow)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Align Top Right',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Top Right',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.yellow, // Mengubah warna Purple
+                      child: Text('4', style: TextStyle(color: Colors.purple)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Align Center Left',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Center Left',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.purple, // Mengubah Purple
+                      child: Text('5', style: TextStyle(color: Colors.yellow)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Align Center',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Center',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.yellow, // Mengubah warna Purple
+                      child: Text('6', style: TextStyle(color: Colors.purple)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Align Center Right',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Center Right',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.purple, // Mengubah Purple
+                      child: Text('7', style: TextStyle(color: Colors.yellow)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Bottom Left',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Bottom Left',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.yellow, // Mengubah Purple
+                      child: Text('8', style: TextStyle(color: Colors.purple)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Align Bottom Center',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Bottom Center',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.purple, // Mengubah Purple
+                      child: Text('9', style: TextStyle(color: Colors.yellow)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Bottom Right',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Container(
+                    height: 300,
+                    color: Colors.orange,
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.lightGreenAccent),
+                        height: 50,
+                        width: 120,
+                        child: const Center(
+                          child: Text(
+                            'Bottom Right',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Center
+                      ), // Container
+                    ), // Align
+                  ), // Container
+                ), // Padding
+                SizedBox(height: 100),
               ],
             ), // Column
           ), // Padding
@@ -132,7 +424,7 @@ class AlignWidget extends StatelessWidget {
             Navigator.pop(context);
           },
           backgroundColor: Colors.purpleAccent,
-          child: const Icon(Icons.arrow_back, color: Colors.white),
+          child: Icon(Icons.arrow_back, color: Colors.white),
         ), // FloatingActionButton
       ), // Scaffold
     ); // MaterialApp

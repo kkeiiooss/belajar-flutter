@@ -12,9 +12,9 @@ class StackWidget extends StatelessWidget {
           title: const Text(
             'Belajar Stack',
             style: TextStyle(color: Colors.white),
-          ), // Text
+          ),
           backgroundColor: Colors.purpleAccent,
-        ), // AppBar
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -141,7 +141,7 @@ class StackWidget extends StatelessWidget {
                   child: Stack(
                     children: [
                       Image.asset(
-                        'assets/images/Mall.jpg',
+                        'assets/images/mall.jpg',
                         width: 300,
                         height: 180,
                         fit: BoxFit.cover,
@@ -350,11 +350,15 @@ class StackWidget extends StatelessWidget {
                         height: 180,
                         color: Colors.grey.shade200,
                       ), // Container
-                      const Icon(
-                        Icons.shopping_bag,
-                        size: 90,
-                        color: Colors.blueGrey,
-                      ), // Icon
+                        const Positioned.fill(
+                          child: Center(
+                            child: Icon(
+                              Icons.shopping_bag,
+                              size: 90,
+                              color: Colors.blueGrey,
+                            ), // Icon
+                          ), // Center
+                        ), // Positioned.fill
                       Positioned(
                         top: 10,
                         left: 10,
@@ -414,6 +418,7 @@ class StackWidget extends StatelessWidget {
                         height: 200,
                         color: Colors.blue.shade100,
                       ), // Container
+
                       // Ikon di kanan atas
                       const Positioned(
                         top: 0,
@@ -424,6 +429,7 @@ class StackWidget extends StatelessWidget {
                           color: Colors.orange,
                         ), // Icon
                       ), // Positioned
+                                            
                       // Teks di kiri bawah
                       const Positioned(
                         left: 10,
@@ -684,7 +690,7 @@ class StackWidget extends StatelessWidget {
                   child: Stack(
                     children: [
                       Container(width: 200, height: 200, color: Colors.red),
-                      const Positioned(
+                      Positioned(
                         left: 30,
                         top: 30,
                         child: Container(

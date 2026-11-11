@@ -21,128 +21,453 @@ class FlexibleWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '1. Flexible Dengan FlexFit.loose (Default)',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const Text(
-                  '   Widget hanya sebesar isinya, tidak dipaksa memenuhi ruang',
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
-                ), // Text
-                const SizedBox(height: 10),
                 Row(
                   children: [
-                    Flexible(
-                      child: Container(
-                        height: 60,
-                        width: 60,
-                        color: Colors.blue,
-                      ), // Container
-                    ), // Flexible
-                    Container(height: 60, width: 60, color: Colors.red),
+                    CircleAvatar(
+                      backgroundColor: Colors.purple, // Mengubah warna Purple
+                      child: Text('1', style: TextStyle(color: Colors.yellow)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Text(
+                      'Konsep Dasar Flexible (Di dalam Row)',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
                   ],
                 ), // Row
-                const SizedBox(height: 20),
-
-                const Text(
-                  '2. Flexible Dengan FlexFit.tight (Seperti Expanded)',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Text(
+                    'Tanpa Flexible (height: 50, width: 50)',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 3.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(8),
+                          ), // BoxDecoration
+                          height: 50,
+                          width: 50,
+                          child: const Center(
+                            child: Text(
+                              'A',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ), // TextStyle
+                            ), // Text
+                          ), // Center
+                        ), // Container
+                      ), // Padding
+                      Padding(
+                        padding: const EdgeInsets.only(right: 3.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(8),
+                          ), // BoxDecoration
+                          height: 50,
+                          width: 50,
+                          child: const Center(
+                            child: Text(
+                              'B',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ), // TextStyle
+                            ), // Text
+                          ), // Center
+                        ), // Container
+                      ), // Padding
+                      Padding(
+                        padding: const EdgeInsets.only(right: 3.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(8),
+                          ), // BoxDecoration
+                          height: 50,
+                          width: 50,
+                          child: const Center(
+                            child: Text(
+                              'C',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ), // TextStyle
+                            ), // Text
+                          ), // Center
+                        ), // Container
+                      ), // Padding
+                    ],
+                  ), // Row
+                ), // Padding
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Text(
+                    'Dengan Flexible (height: 50, width: 50)',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            width: 50,
+                            child: const Center(
+                              child: Text(
+                                'A',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            width: 50,
+                            child: const Center(
+                              child: Text(
+                                'B',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.orange,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            width: 50,
+                            child: const Center(
+                              child: Text(
+                                'C',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                    ],
+                  ), // Row
+                ), // Padding
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Text(
+                    'Dengan Flexible (height: 50, tanpa width)',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            child: const Center(
+                              child: Text(
+                                'A',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            child: const Center(
+                              child: Text(
+                                'B',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.orange,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            child: const Center(
+                              child: Text(
+                                'C',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                    ],
+                  ), // Row
+                ), // Padding
+                SizedBox(height: 20),
                 Row(
                   children: [
-                    Flexible(
-                      fit: FlexFit.tight,
-                      child: Container(height: 60, color: Colors.blue),
-                    ), // Flexible
-                    const SizedBox(width: 10),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      child: Container(height: 60, color: Colors.red),
-                    ), // Flexible
-                  ],
-                ), // Row
-                const SizedBox(height: 20),
-
-                const Text(
-                  '3. Flexible Dengan Flex Berbeda',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Flexible(
-                      flex: 2,
-                      fit: FlexFit.tight,
-                      child: Container(height: 60, color: Colors.blue),
-                    ), // Flexible
-                    Flexible(
-                      flex: 1,
-                      fit: FlexFit.tight,
-                      child: Container(height: 60, color: Colors.orange),
-                    ), // Flexible
-                  ],
-                ), // Row
-                const SizedBox(height: 20),
-
-                const Text(
-                  '4. Perbedaan Flexible vs Expanded',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Flexible(
-                      child: Container(
-                        height: 60,
-                        color: Colors.blue,
-                        alignment: Alignment.center,
-                        child: const Text(
-                          'Flexible\n(loose)',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 12),
-                        ), // Text
-                      ), // Container
-                    ), // Flexible
-                    const SizedBox(width: 10),
+                    CircleAvatar(
+                      backgroundColor: Colors.yellow, // Mengubah warna Purple
+                      child: Text('2', style: TextStyle(color: Colors.purple)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
                     Expanded(
-                      child: Container(
-                        height: 60,
-                        color: Colors.red,
-                        alignment: Alignment.center,
-                        child: const Text(
-                          'Expanded\n(tight)',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 12),
-                        ), // Text
-                      ), // Container
+                      child: Text(
+                        'Menggunakan Flexible dengan FlexFit.loose (height: 50, width: 200)',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
                     ), // Expanded
                   ],
                 ), // Row
-                const SizedBox(height: 20),
-
-                const Text(
-                  '5. Flexible di Dalam Column',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 200,
-                  child: Column(
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            width: 200,
+                            child: const Center(
+                              child: Text(
+                                'FS',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                    ],
+                  ), // Row
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.purple, // Mengubah Purple
+                      child: Text('3', style: TextStyle(color: Colors.yellow)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Menggunakan Flexible dengan FlexFit.tight (height: 50, width: 200)',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        fit: FlexFit.tight,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 50,
+                            width: 200,
+                            child: const Center(
+                              child: Text(
+                                'FT',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                    ],
+                  ), // Row
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.yellow, // Mengubah warna Purple
+                      child: Text('4', style: TextStyle(color: Colors.purple)),
+                    ), // CircleAvatar
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Mengatur perbandingan ukuran menggunakan flex (height: 100)',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 10.0),
+                  child: Row(
                     children: [
                       Flexible(
                         flex: 1,
-                        child: Container(color: Colors.blue),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 100,
+                            child: const Center(
+                              child: Text(
+                                'F1',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
                       ), // Flexible
-                      const SizedBox(height: 5),
                       Flexible(
                         flex: 2,
-                        child: Container(color: Colors.red),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 100,
+                            child: const Center(
+                              child: Text(
+                                'F2',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
+                      ), // Flexible
+                      Flexible(
+                        flex: 3,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.orange,
+                              borderRadius: BorderRadius.circular(8),
+                            ), // BoxDecoration
+                            height: 100,
+                            child: const Center(
+                              child: Text(
+                                'F1',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                          ), // Container
+                        ), // Padding
                       ), // Flexible
                     ],
-                  ), // Column
-                ), // SizedBox
-                const SizedBox(height: 20),
+                  ), // Row
+                ), // Padding
+                SizedBox(height: 150),
               ],
             ), // Column
           ), // Padding
@@ -152,7 +477,7 @@ class FlexibleWidget extends StatelessWidget {
             Navigator.pop(context);
           },
           backgroundColor: Colors.purpleAccent,
-          child: const Icon(Icons.arrow_back, color: Colors.white),
+          child: Icon(Icons.arrow_back, color: Colors.white),
         ), // FloatingActionButton
       ), // Scaffold
     ); // MaterialApp
