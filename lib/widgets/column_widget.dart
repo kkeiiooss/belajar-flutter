@@ -221,6 +221,32 @@ class ColumnWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 42, top: 10, bottom: 20),
               child: _buildCrossAxisAlignmentBox(CrossAxisAlignment.stretch, isStretch: true),
+            ),// 14. CrossAxisAlignment.stretch
+            _buildJudul('14', 'Column dengan crossAxisAlignment.stretch'),
+            Padding(
+              padding: const EdgeInsets.only(left: 42, top: 10, bottom: 20),
+              child: Container(
+                height: 300,
+                padding: const EdgeInsets.all(10),
+                color: Colors.green,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Text(
+                      'Pada Column, CrossAxisAlignment.stretch, Widget anak akan melebar memenuhi ruang horizontal yang tersedia. Sangat berguna untuk tombol full width.',
+                    ),
+                    const SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Login'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Register'),
+                    ),
+                  ],
+                ),
+              ),
             ),
 
             // 15. Column dengan Button

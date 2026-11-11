@@ -21,94 +21,285 @@ class StackWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '1. Stack Paling Sederhana (Menumpuk Widget)',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 150,
-                  width: double.infinity,
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('1')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Sintak Stack Dasar',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
                   child: Stack(
                     children: [
-                      Container(color: Colors.blue),
-                      Container(
-                        margin: const EdgeInsets.all(20),
-                        color: Colors.orange,
-                      ), // Container
-                      const Center(
+                      Container(width: 200, height: 200, color: Colors.blue),
+                      const Text(
+                        'Pada contoh ini, Text berada di atas Container.',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ), // Text
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('2')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Stack dengan dua Container',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      Container(width: 200, height: 200, color: Colors.blue),
+                      Container(width: 120, height: 120, color: Colors.orange),
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Contoh paling sederhana untuk memahami konsep tumpukan. Container Orange berada di atas Container Biru. Container Biru berada di bawah Container Orange.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('3')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Stack menggunakan Positioned',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      Container(width: 300, height: 200, color: Colors.blue),
+                      Positioned(
+                        top: 20,
+                        left: 20,
+                        child: Container(
+                          width: 100,
+                          height: 60,
+                          color: Colors.orange,
+                        ), // Container
+                      ), // Positioned
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Positioned digunakan untuk menentukan posisi widget di dalam Stack. Widget oranye akan berada 20 piksel dari sisi atas dan 20 piksel dari sisi kiri area Stack.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('4')),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Stack untuk menempatkan teks di atas gambar',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      Image.asset(
+                        'assets/images/Mall.jpg',
+                        width: 300,
+                        height: 180,
+                        fit: BoxFit.cover,
+                      ), // Image.asset
+                      const Positioned(
+                        right: 10,
+                        bottom: 50,
                         child: Text(
-                          'Di Tengah',
+                          'Jelajahi Mall Terbaik',
+                          textAlign: TextAlign.right,
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 24,
                             fontWeight: FontWeight.bold,
                           ), // TextStyle
                         ), // Text
-                      ), // Center
-                    ],
-                  ), // Stack
-                ), // SizedBox
-                const SizedBox(height: 20),
-
-                const Text(
-                  '2. Stack Dengan Positioned',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 200,
-                  width: double.infinity,
-                  child: Stack(
-                    children: [
-                      Container(color: Colors.deepPurple),
-                      const Positioned(
-                        top: 10,
-                        left: 10,
-                        child: Text(
-                          'Kiri Atas',
-                          style: TextStyle(color: Colors.white),
-                        ), // Text
                       ), // Positioned
                       const Positioned(
-                        top: 10,
                         right: 10,
+                        bottom: 35,
                         child: Text(
-                          'Kanan Atas',
-                          style: TextStyle(color: Colors.white),
+                          'Suasana belanja yang nyaman dan menyenangkan',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ), // TextStyle
                         ), // Text
                       ), // Positioned
                       const Positioned(
-                        bottom: 10,
-                        left: 10,
-                        child: Text(
-                          'Kiri Bawah',
-                          style: TextStyle(color: Colors.white),
-                        ), // Text
-                      ), // Positioned
-                      const Positioned(
-                        bottom: 10,
                         right: 10,
+                        bottom: 20,
                         child: Text(
-                          'Kanan Bawah',
-                          style: TextStyle(color: Colors.white),
+                          'menanti Anda di mall terbaik.',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ), // TextStyle
                         ), // Text
                       ), // Positioned
                     ],
                   ), // Stack
-                ), // SizedBox
-                const SizedBox(height: 20),
-
-                const Text(
-                  '3. Stack Untuk Badge/Notifikasi',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 70,
-                  width: 70,
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('5')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Stack dengan Ikon di atas Container',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
                   child: Stack(
                     children: [
-                      const Icon(Icons.notifications, size: 50),
+                      Container(
+                        width: 150,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.blue.shade100,
+                          borderRadius: BorderRadius.circular(16),
+                        ), // BoxDecoration
+                      ), // Container
+                      const Positioned(
+                        top: 45,
+                        left: 45,
+                        child: Icon(Icons.home, size: 60, color: Colors.blue),
+                      ), // Positioned
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Contoh ini dapat digunakan untuk membuat kartu menu aplikasi.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('6')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Stack untuk Foto profil dengan ikon edit',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      const CircleAvatar(
+                        radius: 60,
+                        backgroundColor: Colors.blue,
+                        child: Icon(
+                          Icons.person,
+                          size: 70,
+                          color: Colors.white,
+                        ), // Icon
+                      ), // CircleAvatar
+                      const Positioned(
+                        right: 0,
+                        bottom: 0,
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Colors.orange,
+                          child: Icon(
+                            Icons.camera_alt,
+                            size: 20,
+                            color: Colors.white,
+                          ), // Icon
+                        ), // CircleAvatar
+                      ), // Positioned
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Pola ini umum ditemukan pada aplikasi profil pengguna. Widget CircleAvatar kedua ditempatkan di sudut kanan bawah foto profil.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('7')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Stack untuk Badge notifikasi',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      const Icon(Icons.notifications, size: 45),
                       Positioned(
                         top: 0,
                         right: 0,
@@ -119,78 +310,507 @@ class StackWidget extends StatelessWidget {
                             shape: BoxShape.circle,
                           ), // BoxDecoration
                           child: const Text(
-                            '5',
+                            '3',
                             style: TextStyle(color: Colors.white, fontSize: 12),
                           ), // Text
                         ), // Container
                       ), // Positioned
                     ],
                   ), // Stack
-                ), // SizedBox
-                const SizedBox(height: 20),
-
-                const Text(
-                  '4. Stack Dengan Gambar dan Teks Overlay',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 200,
-                  width: double.infinity,
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Contoh ini cocok untuk ikon pesan atau keranjang belanja. Konsepnya: ikon tetap menjadi lapisan belakang, sedangkan angka 3 menjadi badge di bagian kanan atas.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('8')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Stack untuk Label diskon pada produk',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
                   child: Stack(
-                    fit: StackFit.expand,
                     children: [
-                      Image.network(
-                        'https://picsum.photos/400/200',
-                        fit: BoxFit.cover,
-                      ), // Image.network
                       Container(
-                        decoration: BoxDecoration(
+                        width: 220,
+                        height: 180,
+                        color: Colors.grey.shade200,
+                      ), // Container
+                      const Icon(
+                        Icons.shopping_bag,
+                        size: 90,
+                        color: Colors.blueGrey,
+                      ), // Icon
+                      Positioned(
+                        top: 10,
+                        left: 10,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 6,
+                          ), // EdgeInsets.symmetric
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(8),
+                          ), // BoxDecoration
+                          child: const Text(
+                            'DISKON 25%',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ), // TextStyle
+                          ), // Text
+                        ), // Container
+                      ), // Positioned
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Stack memudahkan label diskon menempel pada gambar produk tanpa perlu memindahkan gambar tersebut.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('9')),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Mengatur dengan Positioned.fill dan Align',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: 300,
+                        height: 200,
+                        color: Colors.blue.shade100,
+                      ), // Container
+                      // Ikon di kanan atas
+                      const Positioned(
+                        top: 0,
+                        right: 0,
+                        child: Icon(
+                          Icons.star_border_rounded,
+                          size: 50,
+                          color: Colors.orange,
+                        ), // Icon
+                      ), // Positioned
+                      // Teks di kiri bawah
+                      const Positioned(
+                        left: 10,
+                        bottom: 10,
+                        child: Text(
+                          'Produk Unggulan',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ), // TextStyle
+                        ), // Text
+                      ), // Positioned
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Hasilnya, ikon bintang berada di kanan atas dan teks berada di kiri bawah.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Menggunakan Positioned.fill, kita dapat memakai Align untuk menentukan widget pada posisi tertentu. Nilai Alignment yang umum:',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Alignment.topLeft, Alignment.topCenter, Alignment.topRight, Alignment.centerLeft, Alignment.center, Alignment.centerRight, Alignment.bottomLeft, Alignment.bottomCenter, dan Alignment.bottomRight.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('10')),
+                    SizedBox(width: 10),
+                    Text(
+                      'Stack dengan Positioned.fill dan Center',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ), // TextStyle
+                    ), // Text
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: 300,
+                        height: 200,
+                        color: Colors.green.shade100,
+                      ), // Container
+                      const Positioned.fill(
+                        child: Center(
+                          child: Icon(
+                            Icons.play_circle_fill,
+                            size: 70,
+                            color: Colors.green,
+                          ), // Icon
+                        ), // Center
+                      ), // Positioned.fill
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Pola ini cocok untuk tombol play di atas thumbnail video.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Gunakan Positioned.fill dan Center jika widget harus berada tepat di tengah area Stack.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('11')),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Stack untuk Background dengan teks dan tombol',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 220,
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.transparent,
-                            Colors.black.withValues(alpha: 0.7), // <-- Ubah bagian ini
-                          ],
-                        ), // LinearGradient
+                            colors: [Colors.indigo, Colors.blue],
+                          ), // LinearGradient
                         ), // BoxDecoration
                       ), // Container
                       const Positioned(
-                        bottom: 10,
-                        left: 10,
+                        left: 20,
+                        top: 30,
                         child: Text(
-                          'Judul Berita',
+                          'Belajar Flutter',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                          ), // TextStyle
+                        ), // Text
+                      ), // Positioned
+                      Positioned(
+                        left: 20,
+                        bottom: 25,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text('Mulai Belajar'),
+                        ), // ElevatedButton
+                      ), // Positioned
+                    ],
+                  ), // Stack
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Widget Container menjadi background, Text berada di kiri atas, dan tombol berada di kiri bawah.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('12')),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Stack menggunakan fit',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: SizedBox(
+                    width: 300,
+                    height: 200,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        Container(color: Colors.blue),
+                        const Center(
+                          child: Text(
+                            'Flutter',
+                            style: TextStyle(color: Colors.white, fontSize: 28),
+                          ), // Text
+                        ), // Center
+                      ],
+                    ), // Stack
+                  ), // SizedBox
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Property fit pada Stack mengatur bagaimana anak-anak yang positioned mengisi ruang yang tersedia. StackFit.expand memberikan batas ukuran seluas mungkin kepada anak yang tidak memiliki posisi eksplisit. Gunakan ini jika area Stack sudah mendapatkan ukuran yang jelas dari parent. Nilai yang perlu dikenal:',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Property fit pada Stack mengatur bagaimana anak-anak yang positioned mengisi ruang yang tersedia. StackFit.expand memberikan batas ukuran seluas mungkin kepada anak yang tidak memiliki posisi eksplisit. Gunakan ini jika area Stack sudah mendapatkan ukuran yang jelas dari parent. Nilai yang perlu dikenal:',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'StackFit.loose = Anak non-positioned mendapatkan batas ukuran yang longgar,',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'StackFit.expand = Anak non-positioned diminta mengisi ruang yang tersedia,',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'StackFit.passthrough = Meneruskan batas ukuran dari parent.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('13')),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Mengontrol urutan lapisan dengan Stack.',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 8),
+                  child: Stack(
+                    children: [
+                      Container(width: 200, height: 200, color: Colors.red),
+                      const Positioned(
+                        left: 30,
+                        top: 30,
+                        child: Container(
+                          width: 120,
+                          height: 120,
+                          color: Colors.green,
+                        ), // Container
+                      ), // Positioned
+                      const Positioned(
+                        left: 50,
+                        top: 70,
+                        child: Text(
+                          'Paling Depan',
+                          style: TextStyle(
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ), // TextStyle
                         ), // Text
                       ), // Positioned
                     ],
                   ), // Stack
-                ), // SizedBox
-                const SizedBox(height: 20),
-
-                const Text(
-                  '5. Stack alignment Center',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ), // Text
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 150,
-                  width: double.infinity,
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Widget terakhir dalam children akan tampil di atas widget sebelumnya jika area keduanya saling tumpang tindih.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Urutan lapisannya:',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Lapisan 3: Text "Paling Depan"',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Lapisan 2: Container hijau',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Lapisan 1: Container merah',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    CircleAvatar(child: Text('14')),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Stack dengan IgnorePointer',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ), // TextStyle
+                      ), // Text
+                    ), // Expanded
+                  ],
+                ), // Row
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 0),
                   child: Stack(
-                    alignment: Alignment.center,
                     children: [
-                      Container(width: 150, height: 150, color: Colors.blue),
-                      Container(width: 100, height: 100, color: Colors.orange),
-                      Container(width: 50, height: 50, color: Colors.red),
+                      ElevatedButton(
+                        onPressed: () {
+                          debugPrint('Tombol ditekan');
+                        },
+                        child: const Text('Klik Saya'),
+                      ), // ElevatedButton
+                      IgnorePointer(
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              debugPrint('Tombol Tidak bisa ditekan');
+                            },
+                            child: const Text('Klik Aja Kalo Bisa'),
+                          ), // ElevatedButton
+                        ), // Align
+                      ), // IgnorePointer
                     ],
                   ), // Stack
-                ), // SizedBox
-                const SizedBox(height: 20),
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'IgnorePointer membuat widget tertentu tidak menerima interaksi sentuhan.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50, right: 20),
+                  child: const Text(
+                    'Pada contoh ini, Tombol Klik Aja Kalo Bisa tidak menangkap sentuhan sehingga tombol di belakangnya tetap dapat menerima interaksi. Perlu diingat, IgnorePointer bukan untuk mengatur posisi; posisinya diatur oleh Align.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ), // Text
+                ), // Padding
+                SizedBox(height: 60),
               ],
             ), // Column
           ), // Padding

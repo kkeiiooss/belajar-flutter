@@ -17,6 +17,8 @@ import 'package:dasar_widget/widgets/align_widget.dart';
 import 'package:dasar_widget/widgets/wrap_widget.dart';
 import 'package:dasar_widget/widgets/listview_widget.dart';
 import 'package:dasar_widget/widgets/gridview_widget.dart';
+import 'package:dasar_widget/widgets/tugas1_widget.dart';
+import 'package:dasar_widget/widgets/tugas2_widget.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -490,8 +492,9 @@ class MenuPage extends StatelessWidget {
                     ),
 
                     // =========================
+                   
+               
                     // GRIDVIEW
-                    // =========================
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -507,18 +510,101 @@ class MenuPage extends StatelessWidget {
                       ),
                       child: const Text(
                         'GridView',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ], // penutup children Wrap
+                ), // penutup Wrap
+              ), // penutup Padding tombol layout
+
+              // GARIS KUNING
+              Container(
+                width: double.infinity,
+                height: 7,
+                color: Colors.yellow,
+              ),
+
+              // BANNER EVALUASI
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                color: const Color(0xFF4053B3),
+                alignment: Alignment.center,
+                child: const Text(
+                  'EVALUASI',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+
+              // GARIS KUNING
+              Container(
+                width: double.infinity,
+                height: 7,
+                color: Colors.yellow,
+              ),
+
+              // TOMBOL EVALUASI
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 12,
+                  left: 20,
+                  right: 20,
+                  bottom: 30,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Tugas1Widget(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow,
+                        foregroundColor: Colors.blue,
+                        shape: const RoundedRectangleBorder(),
+                        elevation: 2,
+                      ),
+                      child: const Text(
+                        'TUGAS 1',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Tugas2Widget(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow,
+                        foregroundColor: Colors.blue,
+                        shape: const RoundedRectangleBorder(),
+                        elevation: 2,
+                      ),
+                      child: const Text(
+                        'TUGAS 2',
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ], // penutup children Column
+          ), // penutup Column
+        ), // penutup SingleChildScrollView
+      ), // penutup Scaffold
+    ); // penutup MaterialApp
   }
 }
